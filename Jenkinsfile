@@ -3,7 +3,7 @@ pipeline {
    stages {
         stage('smoke-test') {
             steps {
-                bash ./smoke-google.sh
+                  sh "bash ./smoke-google.sh"
             }
         }
     }
