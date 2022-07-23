@@ -4,7 +4,6 @@ pipeline {
         stage('smoke-test') {
             steps {
                 bash ./smoke-google.sh
-
             }
         }
     }
