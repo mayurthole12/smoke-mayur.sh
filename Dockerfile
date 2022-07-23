@@ -9,7 +9,7 @@ RUN go mod init github.com/mayurthole12/smoke-mayur.sh
 #RUN go test
 
 # Build app
-RUN go build -o sample-app
+#RUN go build -o sample-app
 
 FROM alpine
 
