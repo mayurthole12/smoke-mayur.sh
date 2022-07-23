@@ -13,5 +13,5 @@ RUN go mod init github.com/mayurthole12/smoke-mayur.sh
 
 FROM alpine
 
-COPY --from=builder /code/sample-app /sample-app
+#COPY --from=builder /code/sample-app /sample-app
 CMD /sample-app
