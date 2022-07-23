@@ -4,7 +4,7 @@ RUN apk add git
 COPY . /code
 WORKDIR /code
 
-RUN go mod init github.com/mayurthole12/smoke-mayur.sh
+RUN go mod init https://github.com/mayurthole12/smoke-mayur.sh
 # Run unit tests
 #RUN go test
 
