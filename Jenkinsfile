@@ -1,15 +1,21 @@
+// Declarative pipelines must be enclosed with a "pipeline" directive.
 pipeline {
+    // This line is required for declarative pipelines. Just keep it here.
     agent any
 
-environment {
+    // This section contains environment variables which are available for use in the
+    // pipeline's stages.
+    environment {
 	  region = "us-east-1"
         docker_repo_uri = "860391287505.dkr.ecr.us-east-1.amazonaws.com/sample-app"
         task_def_arn = "arn:aws:ecs:us-east-1:860391287505:task-definition/first-run-task-definition:4"
         cluster = "default"
         exec_role_arn = "arn:aws:iam::860391287505:role/ecsTaskExecutionRole"
     }
-
-stages {
+    
+    // Here you can define one or more stages for your pipeline.
+    // Each stage can execute one or more steps.
+  stages {
         // This is a stage.
       stage('Build') {
          steps {
@@ -39,11 +45,11 @@ stage('Deploy') {
     }
 }
 
-   stages {
-        stage('smoke-test') {
+stage('smoke-test') {
             steps {
                   sh "bash ./smoke-google.sh"
             }
         }
+
     }
 }
